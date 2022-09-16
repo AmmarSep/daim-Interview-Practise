@@ -1,8 +1,9 @@
+/*
 package notion;
 
 import java.util.Arrays;
 
-class Person
+public class Person
 {
     private String name;
     private int age;
@@ -39,4 +40,4 @@ class Main
 
         System.out.println(newUser);
     }
-}
+}*/
