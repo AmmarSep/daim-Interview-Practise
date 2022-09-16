@@ -1,0 +1,21 @@
+
+W
+'src/mb/com/company/FinterfaceApply.java,3\7\3785c0990fc148718b05c8f22aca9a572cd2e8ba
+R
+"src/mb/com/company/Finterface.java,5\3\539851365e5d67033509aac56e94db468e9c99cb
+Y
+)src/mb/com/company/FindDuplicateChar.java,b\8\b86fb6fe8f3f0a810121b0334271a9768514ab5f
+R
+"src/mb/com/company/CountWords.java,f\a\fa55d592d5f042613fe9eb9c7f6edebde8f33063
+S
+#src/mb/com/company/CountDigits.java,4\8\4824ef5570a2986d508390b72933b70987d1ce83
+R
+"src/mb/com/company/SumOfArray.java,5\e\5e8bcf49fb7e29e780162c3106f397c18936ca7b
+_
+/src/mb/com/company/SecondLargestArrayDebug.java,a\2\a2afa8d15525fd38c58bc3cc5c454c464172b06d
+H
+src/Again2/EmplSort.java,e\3\e37774c0f3746a9914bd4d54c2cd44aeb6a62593
+W
+'src/CopyPastedPrograms/VariousSort.java,d\4\d4204ffccb5a99b2e7985ba1672c4860c4501748
+O
+src/Again/FabionacciSeries.java,c\5\c52185d94451f09ad2d56bd9b05bba3890941167
