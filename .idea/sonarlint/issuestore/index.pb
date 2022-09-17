@@ -15,7 +15,5 @@ _
 /src/mb/com/company/SecondLargestArrayDebug.java,a\2\a2afa8d15525fd38c58bc3cc5c454c464172b06d
 H
 src/Again2/EmplSort.java,e\3\e37774c0f3746a9914bd4d54c2cd44aeb6a62593
-W
-'src/CopyPastedPrograms/VariousSort.java,d\4\d4204ffccb5a99b2e7985ba1672c4860c4501748
 O
 src/Again/FabionacciSeries.java,c\5\c52185d94451f09ad2d56bd9b05bba3890941167
