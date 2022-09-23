@@ -1,0 +1,8 @@
+
+r
+java:S1104"WMake studentName a static final constant or non-public and provide accessors if needed.(΄Σ«ϋÿÿÿÿ
+l
+java:S1104"VMake studentAge a static final constant or non-public and provide accessors if needed.(½”ΰβ
+m
+java:S1104"RMake isTeen a static final constant or non-public and provide accessors if needed.(Γ“©λύÿÿÿÿ
+t	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ΜƒÒΙϊÿÿÿÿ

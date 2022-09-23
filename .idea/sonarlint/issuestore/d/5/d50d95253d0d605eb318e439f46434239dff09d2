@@ -1,0 +1,13 @@
+
+S	java:S106	"9Replace this use of System.out or System.err by a logger.(®ıáëûÿÿÿÿ
+Z
+java:S3358
+"DExtract this nested ternary operation into an independent statement.(õ÷Ââ
+S	java:S106"9Replace this use of System.out or System.err by a logger.(²˜Â¹úÿÿÿÿ
+Z
+java:S3358"DExtract this nested ternary operation into an independent statement.(åıæÛ
+_
+java:S3358"DExtract this nested ternary operation into an independent statement.(š¯‰Ïúÿÿÿÿ
+Y
+java:S3358"DExtract this nested ternary operation into an independent statement.(·çğ$
+N	java:S106"9Replace this use of System.out or System.err by a logger.(æÿôÎ
