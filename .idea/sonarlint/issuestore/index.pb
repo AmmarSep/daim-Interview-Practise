@@ -125,8 +125,6 @@ X
 (src/PracticePrograms/UserController.java,3\3\33f08e203fcbec06c71db04b33d15c516ac91625
 W
 'src/PracticePrograms/SecondLargest.java,b\8\b876e3c16a01fec78487682512cdffe492a20d74
-Y
-)src/PracticePrograms/ReverseSentence.java,f\9\f91f4eda6ebd5e1b337a9abf03fc50c89e66bca7
 b
 2src/PracticePrograms/ReverseString_Palindrome.java,c\d\cde9c646a3f3c9b460f213105b7caa6ed9c80df3
 U
@@ -135,8 +133,6 @@ S
 #src/PracticePrograms/Factorial.java,a\4\a4cdba7815a56170090504a41e678dda924c3826
 Z
 *src/PracticePrograms/FabionacciSeries.java,6\e\6e63e684f35a67758286f2fc663a42ec2b5e8d2d
-M
-src/Again2/DuplicateChar.java,3\c\3c2111cba8f2669814b531ebf498c936ec889997
 W
 'src/mb/com/company/PalindromeOrNot.java,a\8\a81eb6f9b1fd06acd3d885962e984f851d6ea1da
 R
@@ -151,12 +147,6 @@ R
 "src/mb/com/company/PrimeOrNot.java,7\7\77612de443ee1dfb39ad1512e0718d170a2f1e1c
 N
 src/javaTechie/Calculator.java,4\3\43f2ae72229c226d9185b8efa614af90a2a55af1
-[
-+src/BasicConcepts/Functional/_Supplier.java,7\c\7c1759a57dc938e3cd40a72696695486ae20306c
-b
-2src/BasicConcepts/Approach/ImperativeApproach.java,e\e\eee5f0167e3acd420b5b1f1c53163271f537761b
-[
-+src/BasicConcepts/Functional/_Consumer.java,2\a\2a63dec03e8ab27f0b4fbf4ffe0c1de7da6a16b8
 K
 src/Edureka/Calculator.java,3\8\38a8547ca6dbb87a3e815e16a755a504af45fd33
 J
@@ -171,15 +161,25 @@ I
 src/Edureka/PatternA.java,e\3\e3918aa369aad2c56a6940b31cfc2bbe599bd80c
 N
 src/Edureka/stringreverse.java,6\6\666d09110ee4ef70eba0a10d496a6f38a5de8b21
-c
-3src/BasicConcepts/Approach/DeclarativeApproach.java,d\3\d39dac3f6b425841d7a04c99c6d5397510be08ae
 H
 src/Edureka/Hashmap.java,f\3\f3c86400ddab2f96319da50845534a6d4840dc00
 Z
 *src/FrequentInterviewPrograms/EvenOdd.java,8\a\8a479d88d17c8126280aeb3214e6795998143659
 \
 ,src/PracticePrograms/CountOccurenceChar.java,9\3\938afedfbdbd126a1810443933a13276d173b27a
-[
-+src/PracticePrograms/FindDuplicateChar.java,c\4\c4f7d44c9f5cbd9cda02218034c7b1dcb88cd9bf
 ]
 -src/FrequentInterviewPrograms/PrimeOrNot.java,e\3\e3885b36ecd17755ce1fcc664918a0f583a6d82a
+R
+"src/Again2/VolTru/EmploySort1.java,0\3\03a5d65f82dad753247aad57e21262c62c2d2d9e
+[
++src/PracticePrograms/FindDuplicateChar.java,c\4\c4f7d44c9f5cbd9cda02218034c7b1dcb88cd9bf
+M
+src/Again2/DuplicateChar.java,3\c\3c2111cba8f2669814b531ebf498c936ec889997
+R
+"src/Again2/VolTru/CountWords1.java,4\a\4a679b4917db3ebdc41438370b786987521f4349
+Y
+)src/PracticePrograms/ReverseSentence.java,f\9\f91f4eda6ebd5e1b337a9abf03fc50c89e66bca7
+`
+0src/PracticePrograms/DuplicateNumberInArray.java,8\3\8365b268b7d26017afe08d414da6b097e1329874
+V
+&src/PracticePrograms/ReverseWords.java,3\d\3dea4b8fffa71c0d88533f53a078002b227d21b6
