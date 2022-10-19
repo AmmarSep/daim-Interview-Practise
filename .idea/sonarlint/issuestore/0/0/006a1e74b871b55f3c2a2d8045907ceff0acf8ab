@@ -1,0 +1,20 @@
+
+i	java:S101	"MRename this class name to match the regular expression '^[A-Z][a-zA-Z0-9]*$'.(ôÊ†8¥Á‘áº0
+{	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ØÎŞşÿÿÿÿ8¢Ù’áº0
+o
+java:S4276"RRefactor this code to use the more specialised Functional Interface 'IntPredicate'(àŸÁ†8‡Ááº0
+N
+java:S1611"1Remove the parentheses around the "num" parameter(àŸÁ†8‡Ááº0
+H
+java:S1481"+Remove this unused "posNum" local variable.(àŸÁ†8ÁÎÓáº0
+{
+java:S4276"YRefactor this code to use the more specialised Functional Interface 'IntFunction<String>'(¥‰»Åüÿÿÿÿ8‡Ááº0
+S
+java:S1611"1Remove the parentheses around the "num" parameter(¥‰»Åüÿÿÿÿ8‡Ááº0
+`
+java:S1612">Replace this lambda with method reference 'Integer::toString'.(¥‰»Åüÿÿÿÿ8—Ááº0
+U	java:S106"9Replace this use of System.out or System.err by a logger.(ªœÙ¾8—Ááº0
+Q
+java:S1611"/Remove the parentheses around the "s" parameter(ïäáïùÿÿÿÿ8—Ááº0
+Z	java:S106"9Replace this use of System.out or System.err by a logger.(ïäáïùÿÿÿÿ8—Ááº0
+Z	java:S106"9Replace this use of System.out or System.err by a logger.(Ïºûÿÿÿÿ8—Ááº0

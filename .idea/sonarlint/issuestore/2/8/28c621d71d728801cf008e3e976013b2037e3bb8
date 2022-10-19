@@ -1,0 +1,9 @@
+
+t
+java:S2293
+"YReplace the type specification in this constructor call with the diamond operator ("<>").(•ş¤®ıÿÿÿÿ
+o	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(äÄ“ˆ
+^
+java:S5361	"HReplace this call to "replaceAll()" by a call to the "replace()" method.(„Ç¢
+Q	java:S125"<This block of commented-out lines of code should be removed.(¦ñ¿Ö
+N	java:S106"9Replace this use of System.out or System.err by a logger.(µˆœÑ

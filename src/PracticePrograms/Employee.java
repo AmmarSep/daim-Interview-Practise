@@ -25,7 +25,7 @@ public class Employee {
         Salary = salary;
     }
 
-    Employee(){
+    public Employee(){
 
     }
 

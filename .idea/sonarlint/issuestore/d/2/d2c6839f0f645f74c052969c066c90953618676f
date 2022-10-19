@@ -1,0 +1,11 @@
+
+x
+java:S1192"]Define a constant instead of duplicating this literal "Numbers in the array set 2 :" 3 times.(²½ê·üÿÿÿÿ
+o	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(šúÂÓ
+S	java:S106"9Replace this use of System.out or System.err by a logger.(¿éîÖüÿÿÿÿ
+S	java:S106"9Replace this use of System.out or System.err by a logger.(²½ê·üÿÿÿÿ
+S	java:S106"9Replace this use of System.out or System.err by a logger.(ï´Öğùÿÿÿÿ
+S	java:S106"9Replace this use of System.out or System.err by a logger.(Ë±öşÿÿÿÿ
+S	java:S106"9Replace this use of System.out or System.err by a logger.(Ğ©ÑÑúÿÿÿÿ
+S	java:S106"9Replace this use of System.out or System.err by a logger.(ş——‘ıÿÿÿÿ
+N	java:S106"9Replace this use of System.out or System.err by a logger.(Îô³

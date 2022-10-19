@@ -7,6 +7,6 @@ public class FinterfaceApply {
 
     public static void main(String[] args) {
         Finterface val = (a,b) -> a*b;
-        System.out.println(val.multiply(5,1));
+        System.out.println(val.multiply(5,32));
     }
 }

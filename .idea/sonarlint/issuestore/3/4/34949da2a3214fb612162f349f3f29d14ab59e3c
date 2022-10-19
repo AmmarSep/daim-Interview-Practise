@@ -1,0 +1,45 @@
+
+f
+java:S1192"KDefine a constant instead of duplicating this literal "2016-06-12" 5 times.(úôÖÀûÿÿÿÿ
+\
+java:S1192"FDefine a constant instead of duplicating this literal "06:30" 3 times.(ÖÌşÏ
+t	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ÌƒÒÉúÿÿÿÿ
+D
+java:S1481".Remove this unused "localDate" local variable.(«¿ëÄ
+;
+java:S2201"&The return value of "of" must be used.(®¼¹]
+?
+java:S2201")The return value of "parse" must be used.(é˜Ÿ
+T
+java:S1481"9Remove this unused "previousMonthSameDay" local variable.(¾ƒøÒúÿÿÿÿ
+C
+java:S1481"-Remove this unused "tomorrow" local variable.(”ÌÆ
+H
+java:S1481"-Remove this unused "leapYear" local variable.(î©úÿÿÿÿ
+D
+java:S1481".Remove this unused "notBefore" local variable.(Ùúú
+G
+java:S1481",Remove this unused "isAfter" local variable.(°‘¢±ùÿÿÿÿ
+N
+java:S1481"3Remove this unused "beginningOfDay" local variable.(¥©—Úûÿÿÿÿ
+O
+java:S1481"4Remove this unused "firstDayOfMonth" local variable.(üßƒËÿÿÿÿÿ
+C
+java:S1481"(Remove this unused "now" local variable.(ˆ­”Úùÿÿÿÿ
+J
+java:S1481 "/Remove this unused "sixThirty1" local variable.(€ºîÍüÿÿÿÿ
+F
+java:S1481!"0Remove this unused "sevenThirty" local variable.(Á Íğ
+C
+java:S1481""-Remove this unused "isbefore" local variable.(‡ûó·
+G
+java:S1481#",Remove this unused "maxTime" local variable.(±â›ïşÿÿÿÿ
+D
+java:S2201&"'The return value of "now" must be used.(üôıÚ8Çåíäº0
+C
+java:S2201'"&The return value of "of" must be used.(©È¥ß8¢ıîäº0
+K
+java:S2201(")The return value of "parse" must be used.(ñ‘—Ëıÿÿÿÿ8şÑîäº0
+S	java:S106."9Replace this use of System.out or System.err by a logger.(ıËøşûÿÿÿÿ
+X	java:S125)"<This block of commented-out lines of code should be removed.(¹ó¤Ù8ëğõäº0
+S	java:S106/"9Replace this use of System.out or System.err by a logger.(æ…—“úÿÿÿÿ
