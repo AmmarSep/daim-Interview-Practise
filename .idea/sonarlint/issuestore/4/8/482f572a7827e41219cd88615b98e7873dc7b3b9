@@ -1,0 +1,12 @@
+
+?
+java:S1197	"*Move the array designators [] to the type.(þÞÌ"
+E
+java:S1197'"*Move the array designators [] to the type.(¯ßˆæüÿÿÿÿ
+N	java:S106."9Replace this use of System.out or System.err by a logger.(²åÛÆ
+S	java:S1065"9Replace this use of System.out or System.err by a logger.(ªÓ¼áþÿÿÿÿ
+N	java:S1067"9Replace this use of System.out or System.err by a logger.(º¼É°
+E
+java:S1197@"*Move the array designators [] to the type.(Ž£“Æøÿÿÿÿ
+9
+java:S1128"$Remove this unused import 'java.io'.(¬›ãD

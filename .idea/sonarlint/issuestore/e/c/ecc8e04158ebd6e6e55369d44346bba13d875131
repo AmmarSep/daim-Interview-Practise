@@ -1,0 +1,16 @@
+
+k	java:S1170"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ö‡…İûÿÿÿÿ
+t	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ÌƒÒÉúÿÿÿÿ
+h	java:S100	"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¼şıÿÿÿÿ
+E
+java:S1197	"*Move the array designators [] to the type.(¼şıÿÿÿÿ
+@
+java:S1197"*Move the array designators [] to the type.(­øÜ
+o
+java:S3012#"YUse "Arrays.copyOf", "Arrays.asList", "Collections.addAll" or "System.arraycopy" instead.(Ú¥·…
+b	java:S100("NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(µ˜
+?
+java:S1197("*Move the array designators [] to the type.(µ˜
+N	java:S106+"9Replace this use of System.out or System.err by a logger.(º¼É°
+@
+java:S1197/"*Move the array designators [] to the type.(ÜŠè

@@ -9,8 +9,6 @@ M
 src/PracticePrograms/Cat.java,a\9\a960370c827e54a9d06c9a77d21d4584f2bf3a37
 [
 +src/PracticePrograms/Count_Even_Odd_No.java,9\c\9c0a7deea9e42a35601e5b6a43f32865610c0e59
-X
-(src/PracticePrograms/CEwithTryCatch.java,b\7\b79df148476fdedd4ec0f741ed45fc5687183ea0
 W
 'src/PracticePrograms/ForLoopAdd100.java,9\0\90681be7a303cbc1b59d372132c1e79dd2bef009
 P
@@ -61,8 +59,6 @@ V
 &src/PracticePrograms/SortingByMap.java,5\f\5fb2a8154a7d1d344ff1ef7c4eda922b71d04f8b
 V
 &src/PracticePrograms/String_immut.java,f\1\f1f98eb7cd6e4efc04f97200f9ca754d7a026e4c
-U
-%src/PracticePrograms/StringCount.java,e\5\e53fb46088bdf903de4aac66b06a32f5a7ad1f98
 X
 (src/PracticePrograms/StudentDetails.java,0\9\092d86ff81f408265d1a0d6a628ccae43b56c870
 \
@@ -155,10 +151,6 @@ N
 src/javaTechie/Calculator.java,4\3\43f2ae72229c226d9185b8efa614af90a2a55af1
 W
 'src/mb/com/company/BracketBalancer.java,a\9\a9e181bab61c67d0d07eacefd772955bd90ec03e
-S
-#src/mb/com/company/CountDigits.java,4\8\4824ef5570a2986d508390b72933b70987d1ce83
-R
-"src/mb/com/company/CountWords.java,f\a\fa55d592d5f042613fe9eb9c7f6edebde8f33063
 X
 (src/mb/com/company/FabionacciSeries.java,8\4\84deda3c833eefb03645b1df1cee6d8062804789
 Q
@@ -213,12 +205,8 @@ V
 &src/PracticePrograms/Count_Number.java,0\0\0094dcf0618f8495209e4aaaf4728f86a9634ab4
 U
 %src/PracticePrograms/CountDigits.java,4\d\4d53cc664d86a06e90cdfba35c5c2e99a1bdf10e
-\
-,src/PracticePrograms/CountOccurenceChar.java,9\3\938afedfbdbd126a1810443933a13276d173b27a
 T
 $src/PracticePrograms/CountWords.java,6\e\6e95f3e2b05abb31ef07bb7302798c4de134dae5
-Y
-)src/PracticePrograms/CustomException.java,9\8\984dc1dad323c4a6de40a2b6ef56766dd168b335
 Q
 !src/PracticePrograms/DemoApp.java,a\5\a50b2a6b2f826a30966fa517e1c30dee55d4ad9a
 `
@@ -227,8 +215,6 @@ R
 "src/PracticePrograms/Employee.java,4\7\472505caca01c8dcc9cc47b1fdeb87e782be3602
 Q
 !src/PracticePrograms/EvenOdd.java,e\9\e9f6f2c2ba0dee9d855ee0a829bff5bab9e80e75
-P
- src/PracticePrograms/Except.java,e\7\e7e1b1ad3ff5968e4472fa031f98047c93407b2c
 Z
 *src/PracticePrograms/FabionacciSeries.java,6\e\6e63e684f35a67758286f2fc663a42ec2b5e8d2d
 P
@@ -237,10 +223,6 @@ S
 #src/PracticePrograms/Factorial.java,a\4\a4cdba7815a56170090504a41e678dda924c3826
 [
 +src/PracticePrograms/FindDuplicateChar.java,c\4\c4f7d44c9f5cbd9cda02218034c7b1dcb88cd9bf
-y
-Isrc/PracticePrograms/FindDuplicatesUsingFilterAndCollectionFrequency.java,0\5\05c3a47f58bb6a724e15c1cfe776e867c04a3316
-[
-+src/PracticePrograms/FindOccurenceChar.java,3\1\31782d3eec33e0bc996c98317c845b69390c8815
 Y
 )src/PracticePrograms/LambdaUpperCase.java,a\8\a83415f325930fb389814ceadc71121105a0e601
 ~
@@ -259,18 +241,10 @@ J
 src/Test/EmployeeSort.java,4\3\43e4e5e4b80619fc9921a541c72e6fecd87ae0fb
 L
 src/Test/DuplicateChars.java,3\3\33f39db48970e1bf708c2ca6bdc40a255b0b1dbf
-T
-$src/Test/CountAndPrintRepeating.java,3\9\393e66e9e8207adcf39d61f9a6991cb2b59bf7c0
 N
 src/Edureka/stringreverse.java,6\6\666d09110ee4ef70eba0a10d496a6f38a5de8b21
 b
 2src/Again2/Practising/DuplicateElementInArray.java,4\8\48d3207f707b6f2da4c06a18db7c078395afeb4c
-e
-5src/Again2/Practising/CountOccurenceOfWordStream.java,4\8\48e8d6d259c3e8a70ddd1e437ed3f178abb209b4
-T
-$src/Amigoscode/Streams/_streams.java,9\0\909311faf537a06c6d0f0db71c3148b22585a29b
-W
-'src/VariousStreamPrograms/_streams.java,a\4\a4c14414ca35ce0966191b7c842c1c6379a4c74b
 S
 #src/Amigoscode/PassportProgram.java,b\4\b4f1991c944b7cabc2ec3f02cc3d2814dc1463f9
 S
@@ -283,5 +257,57 @@ T
 $src/ArraysInBuilt/WritingArrays.java,d\2\d2c6839f0f645f74c052969c066c90953618676f
 e
 5src/CopyPastedPrograms/CapitalizeFirstLetterMain.java,1\2\1200a4bdc4adfdc6454a41b180e6c7567c2c1672
+N
+src/HackerRankCG/Solution.java,d\1\d1201ad7c03d3f88ae5737ed3ca87a8cf71a581a
+N
+src/HackerRankCG/IfHacker.java,4\2\4244207e468fe327c71f9565c37d0420ce642e95
+S
+#src/HackerRankCG/ScannerHacker.java,b\c\bcb4ccafd37798c97f32c801a73e2a1a6ccb3a0c
+[
++src/PracticePrograms/RemoveSpecialChar.java,8\7\8730362e96be705ac5452d276f7972aad73f56a2
+`
+0src/PracticePrograms/RotateArrayByDPosition.java,e\c\ecc8e04158ebd6e6e55369d44346bba13d875131
+R
+"src/SmallPrograms/ToUpperCase.java,a\f\affae905fac03b833f4f30eb599f20e8055c85ec
+U
+%src/SmallPrograms/AddExclamation.java,5\c\5c2f6a79e1f572e4c66a8e7104a24cbc0e3af5f4
+R
+"src/mb/com/company/SplitArray.java,4\8\482f572a7827e41219cd88615b98e7873dc7b3b9
+U
+%src/PracticePrograms/RotateArray.java,b\2\b2710a8803268fd59723706e22092f2af79705ab
+T
+$src/PracticePrograms/SplitArray.java,5\6\569a233a26c4366d219c09a643a728885afe191c
+Y
+)src/PracticePrograms/CustomException.java,9\8\984dc1dad323c4a6de40a2b6ef56766dd168b335
+P
+ src/PracticePrograms/Except.java,e\7\e7e1b1ad3ff5968e4472fa031f98047c93407b2c
+S
+#src/mb/com/company/CountDigits.java,4\8\4824ef5570a2986d508390b72933b70987d1ce83
+R
+"src/mb/com/company/CountWords.java,f\a\fa55d592d5f042613fe9eb9c7f6edebde8f33063
+\
+,src/PracticePrograms/CountOccurenceChar.java,9\3\938afedfbdbd126a1810443933a13276d173b27a
+y
+Isrc/PracticePrograms/FindDuplicatesUsingFilterAndCollectionFrequency.java,0\5\05c3a47f58bb6a724e15c1cfe776e867c04a3316
+[
++src/PracticePrograms/FindOccurenceChar.java,3\1\31782d3eec33e0bc996c98317c845b69390c8815
+U
+%src/PracticePrograms/StringCount.java,e\5\e53fb46088bdf903de4aac66b06a32f5a7ad1f98
+W
+'src/VariousStreamPrograms/_streams.java,a\4\a4c14414ca35ce0966191b7c842c1c6379a4c74b
+T
+$src/Test/CountAndPrintRepeating.java,3\9\393e66e9e8207adcf39d61f9a6991cb2b59bf7c0
 d
 4src/CopyPastedPrograms/CountCharUsingCharacters.java,2\8\28c621d71d728801cf008e3e976013b2037e3bb8
+T
+$src/Amigoscode/Streams/_streams.java,9\0\909311faf537a06c6d0f0db71c3148b22585a29b
+X
+(src/PracticePrograms/CEwithTryCatch.java,b\7\b79df148476fdedd4ec0f741ed45fc5687183ea0
+e
+5src/Again2/Practising/CountOccurenceOfWordStream.java,4\8\48e8d6d259c3e8a70ddd1e437ed3f178abb209b4
+d
+4src/PracticePrograms/CountOccurenceOfWordStream.java,e\e\eeb2c2cb4502eb800626db10c9c0572cb9d6ba69
+a
+1src/PracticePrograms/DuplicateElementInArray.java,9\8\98d36c958e38688a7c73b364fab80af26e7cb602
+f
+6src/Again2/Practising/CountOccurenceOfWordStream1.java,f\f\ff2304e5669925ced86e9b885a69e53443e35537

@@ -1,11 +1,8 @@
 package FrequentInterviewPrograms;
 
-import CopyPastedPrograms.EmployeeSort;
-
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
-
 public class EmplSort {
     public String name;
     public int age;
@@ -40,19 +37,20 @@ public class EmplSort {
     }
 
     public static void main(String[] args) {
-        List<EmployeeSort> employeeList = new ArrayList<>();
-        employeeList.add(new EmployeeSort("Niyaz", 21));
-        employeeList.add(new EmployeeSort("Raez", 32));
-        employeeList.add(new EmployeeSort("Siha", 53));
-        employeeList.add(new EmployeeSort("Lafir", 23));
-        employeeList.add(new EmployeeSort("Sabiq", 32));
-        employeeList.add(new EmployeeSort("Lafir", 33));
-        for(EmployeeSort e : employeeList){
-            System.out.println("Before sorting" +e);
+        List<EmplSort> employeeList = new ArrayList<>();
+        employeeList.add(new EmplSort("Niyaz", 21));
+        employeeList.add(new EmplSort("Raez", 32));
+        employeeList.add(new EmplSort("Siha", 53));
+        employeeList.add(new EmplSort("Lafir", 23));
+        employeeList.add(new EmplSort("Sabiq", 32));
+        employeeList.add(new EmplSort("Lafir", 33));
+        System.out.println("Before sorting");
+        for(EmplSort e : employeeList){
+            System.out.println(e);
         }
-        employeeList.sort(Comparator.comparing(EmployeeSort::getName).thenComparing(EmployeeSort::getAge));
-        System.out.println(employeeList);
-        for(EmployeeSort s : employeeList){
+        employeeList.sort(Comparator.comparing(EmplSort::getName).thenComparing(EmplSort::getAge));
+        System.out.println("After sorting");
+        for(EmplSort s : employeeList){
             System.out.println(s);
         }
     }
