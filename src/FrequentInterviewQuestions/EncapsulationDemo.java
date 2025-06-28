@@ -40,7 +40,7 @@ public class EncapsulationDemo {
         System.out.println("\n1. Basic Encapsulation:\n");
 
         // Create an encapsulated class instance
-        Employee employee = new Employee();
+        EmployeeEncapsulation employee = new EmployeeEncapsulation();
 
         // Using setters to assign values
         employee.setId(101);
@@ -172,7 +172,7 @@ public class EncapsulationDemo {
 }
 
 // Basic encapsulation example
-class Employee {
+class EmployeeEncapsulation {
     // Private fields - not accessible directly from outside the class
     private int id;
     private String name;
@@ -393,4 +393,16 @@ final class Point {  // final class - cannot be extended
     }
 
     // In a complete implementation, override equals() and hashCode()
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null || getClass() != obj.getClass()) return false;
+        Point other = (Point) obj;
+        return x == other.x && y == other.y;
+    }
+
+    @Override
+    public int hashCode() {
+        return 31 * x + y;
+    }
 }

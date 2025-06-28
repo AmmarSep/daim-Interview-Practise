@@ -123,7 +123,7 @@ public class Java8Features {
 
         // Chaining functions
         Function<Integer, Integer> doubled = num -> num * 2;
-        Function<Integer, Integer> lengthThenDouble = doubled.compose(stringLength);
+        Function<String, Integer> lengthThenDouble = stringLength.andThen(doubled);
         System.out.println("Double the length of 'Python': " + 
                 lengthThenDouble.apply("Python"));
     }
@@ -132,12 +132,12 @@ public class Java8Features {
         System.out.println("\n4. Default and Static Methods in Interfaces:");
 
         // Create an instance of a class implementing our interface
-        Vehicle car = new Car();
+        Java8Vehicle car = new Java8Car();
         car.startEngine();
         car.honk(); // Using the default method
 
         // Using static method from interface
-        int wheelCount = Vehicle.getStandardWheelCount();
+        int wheelCount = Java8Vehicle.getStandardWheelCount();
         System.out.println("Standard wheel count: " + wheelCount);
     }
 
@@ -221,7 +221,7 @@ public class Java8Features {
 }
 
 // Interface with default and static methods for demonstration
-interface Vehicle {
+interface Java8Vehicle {
     void startEngine();
 
     // Default method
@@ -236,7 +236,7 @@ interface Vehicle {
 }
 
 // Implementation of the interface
-class Car implements Vehicle {
+class Java8Car implements Java8Vehicle {
     @Override
     public void startEngine() {
         System.out.println("Car engine started");

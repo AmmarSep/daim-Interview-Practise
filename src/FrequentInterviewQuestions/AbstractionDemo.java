@@ -35,11 +35,11 @@ public class AbstractionDemo {
         System.out.println("\n1. Abstraction using Abstract Classes:\n");
 
         // Cannot instantiate abstract class
-        // Shape shape = new Shape(); // Compilation error
+        // DemoShape shape = new DemoShape(); // Compilation error
 
         // Using concrete implementations of abstract class
-        Shape circle = new Circle("Red", 5.0);
-        Shape rectangle = new Rectangle("Blue", 4.0, 6.0);
+        DemoShape circle = new DemoCircle("Red", 5.0);
+        DemoShape rectangle = new DemoRectangle("Blue", 4.0, 6.0);
 
         // Calling abstract and concrete methods
         circle.display();  // Concrete method from abstract class
@@ -62,12 +62,12 @@ public class AbstractionDemo {
         System.out.println("\n2. Abstraction using Interfaces:\n");
 
         // Cannot instantiate interface
-        // Drawable drawable = new Drawable(); // Compilation error
+        // DemoDrawable drawable = new DemoDrawable(); // Compilation error
 
         // Using classes that implement the interface
-        Drawable circle = new Circle("Green", 3.0);
-        Drawable rectangle = new Rectangle("Orange", 2.0, 5.0);
-        Drawable triangle = new Triangle("Purple", 4.0, 3.0);
+        DemoDrawable circle = new DemoCircle("Green", 3.0);
+        DemoDrawable rectangle = new DemoRectangle("Orange", 2.0, 5.0);
+        DemoDrawable triangle = new DemoTriangle("Purple", 4.0, 3.0);
 
         // Polymorphic behavior through interface
         System.out.println("Drawing various shapes:");
@@ -79,11 +79,11 @@ public class AbstractionDemo {
         circle.printInfo();  // Default method
 
         // Using static method from interface (Java 8+)
-        String drawingTip = Drawable.getDrawingTip();
+        String drawingTip = DemoDrawable.getDrawingTip();
         System.out.println("Drawing tip: " + drawingTip);
 
         // Using constant defined in interface
-        System.out.println("Drawing tool: " + Drawable.DRAWING_TOOL);
+        System.out.println("Drawing tool: " + DemoDrawable.DRAWING_TOOL);
     }
 
     /**
@@ -113,11 +113,11 @@ public class AbstractionDemo {
         System.out.println("- Use when objects share type but might have different behavior implementations");
 
         // Demonstration using a class that uses both
-        AdvancedDrawable advShape = new AdvancedRectangle("Cyan", 10.0, 8.0);
-        advShape.draw();  // From Drawable interface
-        advShape.rotate(45);  // From Rotatable interface
-        advShape.display();  // From Shape abstract class
-        System.out.println("Area: " + advShape.calculateArea());  // From Shape abstract class
+        DemoAdvancedRectangle advShape = new DemoAdvancedRectangle("Cyan", 10.0, 8.0);
+        advShape.draw();  // From DemoDrawable interface
+        advShape.rotate(45);  // From DemoRotatable interface
+        advShape.display();  // From DemoShape abstract class
+        System.out.println("Area: " + advShape.calculateArea());  // From DemoShape abstract class
     }
 
     /**
@@ -128,8 +128,8 @@ public class AbstractionDemo {
 
         // Database abstraction example
         System.out.println("Database Abstraction Example:");
-        Database mySqlDb = new MySQLDatabase();
-        Database mongoDb = new MongoDBDatabase();
+        DemoDatabase mySqlDb = new DemoMySQLDatabase();
+        DemoDatabase mongoDb = new DemoMongoDBDatabase();
 
         // Using abstracted methods without knowing specific implementation
         mySqlDb.connect();
@@ -142,8 +142,8 @@ public class AbstractionDemo {
 
         // Vehicle abstraction example
         System.out.println("\nVehicle Abstraction Example:");
-        Vehicle car = new Car("Toyota");
-        Vehicle bike = new Bicycle("Trek");
+        DemoVehicle car = new DemoCar("Toyota");
+        DemoVehicle bike = new DemoBicycle("Trek");
 
         car.start();
         car.accelerate();
@@ -155,268 +155,268 @@ public class AbstractionDemo {
         bike.brake();
         bike.stop();
     }
-}
 
-// Abstract Class Example
-abstract class Shape {
-    private String color;
+    // Abstract Class Example
+    static abstract class DemoShape {
+        private String color;
 
-    // Constructor in abstract class
-    public Shape(String color) {
-        this.color = color;
+        // Constructor in abstract class
+        public DemoShape(String color) {
+            this.color = color;
+        }
+
+        // Concrete method (with implementation)
+        public void display() {
+            System.out.println("This is a " + color + " shape");
+        }
+
+        // Getter and setter
+        public String getColor() {
+            return color;
+        }
+
+        public void setColor(String color) {
+            this.color = color;
+        }
+
+        // Abstract methods (without implementation)
+        public abstract double calculateArea();
+        public abstract void draw();
     }
 
-    // Concrete method (with implementation)
-    public void display() {
-        System.out.println("This is a " + color + " shape");
+    // Interface Example
+    interface DemoDrawable {
+        // Constant (implicitly public static final)
+        String DRAWING_TOOL = "Pencil";
+
+        // Abstract method (implicitly public abstract)
+        void draw();
+
+        // Default method with implementation (Java 8+)
+        default void printInfo() {
+            System.out.println("I am a drawable object, drawn with " + DRAWING_TOOL);
+        }
+
+        // Static method (Java 8+)
+        static String getDrawingTip() {
+            return "Use light strokes for better control";
+        }
     }
 
-    // Getter and setter
-    public String getColor() {
-        return color;
+    // Another interface for multiple inheritance demonstration
+    interface DemoRotatable {
+        void rotate(double degrees);
+
+        default void resetRotation() {
+            System.out.println("Resetting rotation to 0 degrees");
+        }
     }
 
-    public void setColor(String color) {
-        this.color = color;
+    // Concrete implementation of DemoShape abstract class
+    static class DemoCircle extends DemoShape implements DemoDrawable {
+        private double radius;
+
+        public DemoCircle(String color, double radius) {
+            super(color);  // Call to abstract class constructor
+            this.radius = radius;
+        }
+
+        // Implementation of abstract method from DemoShape
+        @Override
+        public double calculateArea() {
+            return Math.PI * radius * radius;
+        }
+
+        // Implementation of abstract method from DemoShape
+        // Also implements the interface method
+        @Override
+        public void draw() {
+            System.out.println("Drawing a " + getColor() + " circle with radius " + radius);
+        }
     }
 
-    // Abstract methods (without implementation)
-    public abstract double calculateArea();
-    public abstract void draw();
-}
+    // Another concrete implementation of DemoShape
+    static class DemoRectangle extends DemoShape implements DemoDrawable {
+        private double width;
+        private double height;
 
-// Interface Example
-interface Drawable {
-    // Constant (implicitly public static final)
-    String DRAWING_TOOL = "Pencil";
+        public DemoRectangle(String color, double width, double height) {
+            super(color);
+            this.width = width;
+            this.height = height;
+        }
 
-    // Abstract method (implicitly public abstract)
-    void draw();
+        @Override
+        public double calculateArea() {
+            return width * height;
+        }
 
-    // Default method with implementation (Java 8+)
-    default void printInfo() {
-        System.out.println("I am a drawable object, drawn with " + DRAWING_TOOL);
+        @Override
+        public void draw() {
+            System.out.println("Drawing a " + getColor() + " rectangle with width " + 
+                             width + " and height " + height);
+        }
     }
 
-    // Static method (Java 8+)
-    static String getDrawingTip() {
-        return "Use light strokes for better control";
-    }
-}
+    // Class implementing just the interface (not extending abstract class)
+    static class DemoTriangle implements DemoDrawable {
+        private String color;
+        private double base;
+        private double height;
 
-// Another interface for multiple inheritance demonstration
-interface Rotatable {
-    void rotate(double degrees);
+        public DemoTriangle(String color, double base, double height) {
+            this.color = color;
+            this.base = base;
+            this.height = height;
+        }
 
-    default void resetRotation() {
-        System.out.println("Resetting rotation to 0 degrees");
-    }
-}
-
-// Concrete implementation of Shape abstract class
-class Circle extends Shape implements Drawable {
-    private double radius;
-
-    public Circle(String color, double radius) {
-        super(color);  // Call to abstract class constructor
-        this.radius = radius;
+        @Override
+        public void draw() {
+            System.out.println("Drawing a " + color + " triangle with base " + 
+                             base + " and height " + height);
+        }
     }
 
-    // Implementation of abstract method from Shape
-    @Override
-    public double calculateArea() {
-        return Math.PI * radius * radius;
+    // Class extending abstract class and implementing multiple interfaces
+    static class DemoAdvancedRectangle extends DemoShape implements DemoDrawable, DemoRotatable {
+        private double width;
+        private double height;
+        private double currentRotation = 0;
+
+        public DemoAdvancedRectangle(String color, double width, double height) {
+            super(color);
+            this.width = width;
+            this.height = height;
+        }
+
+        @Override
+        public double calculateArea() {
+            return width * height;
+        }
+
+        @Override
+        public void draw() {
+            System.out.println("Drawing an advanced " + getColor() + " rectangle with width " + 
+                             width + " and height " + height + " at " + currentRotation + " degrees");
+        }
+
+        @Override
+        public void rotate(double degrees) {
+            this.currentRotation = degrees;
+            System.out.println("Rotated to " + degrees + " degrees");
+        }
     }
 
-    // Implementation of abstract method from Shape
-    // Also implements the interface method
-    @Override
-    public void draw() {
-        System.out.println("Drawing a " + getColor() + " circle with radius " + radius);
-    }
-}
+    // Real-world abstraction example: Database
+    static abstract class DemoDatabase {
+        public abstract void connect();
+        public abstract void executeQuery(String query);
+        public abstract void close();
 
-// Another concrete implementation of Shape
-class Rectangle extends Shape implements Drawable {
-    private double width;
-    private double height;
-
-    public Rectangle(String color, double width, double height) {
-        super(color);
-        this.width = width;
-        this.height = height;
+        // Common method for all databases
+        public void printStatus() {
+            System.out.println("Database status: OK");
+        }
     }
 
-    @Override
-    public double calculateArea() {
-        return width * height;
+    static class DemoMySQLDatabase extends DemoDatabase {
+        @Override
+        public void connect() {
+            System.out.println("Connecting to MySQL database...");
+        }
+
+        @Override
+        public void executeQuery(String query) {
+            System.out.println("Executing MySQL query: " + query);
+        }
+
+        @Override
+        public void close() {
+            System.out.println("Closing MySQL connection");
+        }
     }
 
-    @Override
-    public void draw() {
-        System.out.println("Drawing a " + getColor() + " rectangle with width " + 
-                         width + " and height " + height);
-    }
-}
+    static class DemoMongoDBDatabase extends DemoDatabase {
+        @Override
+        public void connect() {
+            System.out.println("Connecting to MongoDB database...");
+        }
 
-// Class implementing just the interface (not extending abstract class)
-class Triangle implements Drawable {
-    private String color;
-    private double base;
-    private double height;
+        @Override
+        public void executeQuery(String query) {
+            System.out.println("Executing MongoDB query: " + query);
+        }
 
-    public Triangle(String color, double base, double height) {
-        this.color = color;
-        this.base = base;
-        this.height = height;
+        @Override
+        public void close() {
+            System.out.println("Closing MongoDB connection");
+        }
     }
 
-    @Override
-    public void draw() {
-        System.out.println("Drawing a " + color + " triangle with base " + 
-                         base + " and height " + height);
-    }
-}
+    // Real-world abstraction example: Vehicle
+    static abstract class DemoVehicle {
+        protected String brand;
 
-// Class extending abstract class and implementing multiple interfaces
-class AdvancedRectangle extends Shape implements Drawable, Rotatable {
-    private double width;
-    private double height;
-    private double currentRotation = 0;
+        public DemoVehicle(String brand) {
+            this.brand = brand;
+        }
 
-    public AdvancedRectangle(String color, double width, double height) {
-        super(color);
-        this.width = width;
-        this.height = height;
+        // Abstract methods
+        public abstract void start();
+        public abstract void accelerate();
+        public abstract void brake();
+        public abstract void stop();
     }
 
-    @Override
-    public double calculateArea() {
-        return width * height;
+    static class DemoCar extends DemoVehicle {
+        public DemoCar(String brand) {
+            super(brand);
+        }
+
+        @Override
+        public void start() {
+            System.out.println(brand + " car: Starting engine");
+        }
+
+        @Override
+        public void accelerate() {
+            System.out.println(brand + " car: Pressing gas pedal");
+        }
+
+        @Override
+        public void brake() {
+            System.out.println(brand + " car: Applying brakes");
+        }
+
+        @Override
+        public void stop() {
+            System.out.println(brand + " car: Stopping engine");
+        }
     }
 
-    @Override
-    public void draw() {
-        System.out.println("Drawing an advanced " + getColor() + " rectangle with width " + 
-                         width + " and height " + height + " at " + currentRotation + " degrees");
-    }
+    static class DemoBicycle extends DemoVehicle {
+        public DemoBicycle(String brand) {
+            super(brand);
+        }
 
-    @Override
-    public void rotate(double degrees) {
-        this.currentRotation = degrees;
-        System.out.println("Rotated to " + degrees + " degrees");
-    }
-}
+        @Override
+        public void start() {
+            System.out.println(brand + " bicycle: Starting to pedal");
+        }
 
-// Real-world abstraction example: Database
-abstract class Database {
-    public abstract void connect();
-    public abstract void executeQuery(String query);
-    public abstract void close();
+        @Override
+        public void accelerate() {
+            System.out.println(brand + " bicycle: Pedaling faster");
+        }
 
-    // Common method for all databases
-    public void printStatus() {
-        System.out.println("Database status: OK");
-    }
-}
+        @Override
+        public void brake() {
+            System.out.println(brand + " bicycle: Squeezing brake levers");
+        }
 
-class MySQLDatabase extends Database {
-    @Override
-    public void connect() {
-        System.out.println("Connecting to MySQL database...");
-    }
-
-    @Override
-    public void executeQuery(String query) {
-        System.out.println("Executing MySQL query: " + query);
-    }
-
-    @Override
-    public void close() {
-        System.out.println("Closing MySQL connection");
-    }
-}
-
-class MongoDBDatabase extends Database {
-    @Override
-    public void connect() {
-        System.out.println("Connecting to MongoDB database...");
-    }
-
-    @Override
-    public void executeQuery(String query) {
-        System.out.println("Executing MongoDB query: " + query);
-    }
-
-    @Override
-    public void close() {
-        System.out.println("Closing MongoDB connection");
-    }
-}
-
-// Real-world abstraction example: Vehicle
-abstract class Vehicle {
-    protected String brand;
-
-    public Vehicle(String brand) {
-        this.brand = brand;
-    }
-
-    // Abstract methods
-    public abstract void start();
-    public abstract void accelerate();
-    public abstract void brake();
-    public abstract void stop();
-}
-
-class Car extends Vehicle {
-    public Car(String brand) {
-        super(brand);
-    }
-
-    @Override
-    public void start() {
-        System.out.println(brand + " car: Starting engine");
-    }
-
-    @Override
-    public void accelerate() {
-        System.out.println(brand + " car: Pressing gas pedal");
-    }
-
-    @Override
-    public void brake() {
-        System.out.println(brand + " car: Applying brakes");
-    }
-
-    @Override
-    public void stop() {
-        System.out.println(brand + " car: Stopping engine");
-    }
-}
-
-class Bicycle extends Vehicle {
-    public Bicycle(String brand) {
-        super(brand);
-    }
-
-    @Override
-    public void start() {
-        System.out.println(brand + " bicycle: Starting to pedal");
-    }
-
-    @Override
-    public void accelerate() {
-        System.out.println(brand + " bicycle: Pedaling faster");
-    }
-
-    @Override
-    public void brake() {
-        System.out.println(brand + " bicycle: Squeezing brake levers");
-    }
-
-    @Override
-    public void stop() {
-        System.out.println(brand + " bicycle: Stopping pedaling");
+        @Override
+        public void stop() {
+            System.out.println(brand + " bicycle: Stopping pedaling");
+        }
     }
 }

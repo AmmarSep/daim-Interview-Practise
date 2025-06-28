@@ -46,12 +46,12 @@ public class ComparableVsComparatorDemo {
     private static void demonstrateComparable() {
         System.out.println("\n1. Using Comparable (Natural Ordering):\n");
 
-        // Creating a list of Person objects (which implement Comparable)
-        List<Person> people = new ArrayList<>();
-        people.add(new Person("John", 28));
-        people.add(new Person("Alice", 22));
-        people.add(new Person("Bob", 31));
-        people.add(new Person("Carol", 26));
+        // Creating a list of ComparablePerson objects (which implement Comparable)
+        List<ComparablePerson> people = new ArrayList<>();
+        people.add(new ComparablePerson("John", 28));
+        people.add(new ComparablePerson("Alice", 22));
+        people.add(new ComparablePerson("Bob", 31));
+        people.add(new ComparablePerson("Carol", 26));
 
         System.out.println("Original list of people:");
         printList(people);
@@ -73,9 +73,9 @@ public class ComparableVsComparatorDemo {
         System.out.println("\nSorted names (natural ordering):");
         printList(names);
 
-        // Comparing Person objects directly
-        Person person1 = new Person("John", 28);
-        Person person2 = new Person("Alice", 22);
+        // Comparing ComparablePerson objects directly
+        ComparablePerson person1 = new ComparablePerson("John", 28);
+        ComparablePerson person2 = new ComparablePerson("Alice", 22);
 
         int comparisonResult = person1.compareTo(person2);
         System.out.println("\nComparing " + person1.getName() + " with " + person2.getName() + ": " + comparisonResult);
@@ -189,12 +189,12 @@ public class ComparableVsComparatorDemo {
         System.out.println("\n4. Multiple Comparators:\n");
 
         // Creating employees with different departments and salaries
-        List<Employee> employees = new ArrayList<>();
-        employees.add(new Employee("John", "Engineering", 75000));
-        employees.add(new Employee("Alice", "Marketing", 65000));
-        employees.add(new Employee("Bob", "Engineering", 85000));
-        employees.add(new Employee("Carol", "HR", 60000));
-        employees.add(new Employee("David", "Marketing", 70000));
+        List<ComparableEmployee> employees = new ArrayList<>();
+        employees.add(new ComparableEmployee("John", "Engineering", 75000));
+        employees.add(new ComparableEmployee("Alice", "Marketing", 65000));
+        employees.add(new ComparableEmployee("Bob", "Engineering", 85000));
+        employees.add(new ComparableEmployee("Carol", "HR", 60000));
+        employees.add(new ComparableEmployee("David", "Marketing", 70000));
 
         System.out.println("Original list of employees:");
         printEmployees(employees);
@@ -221,12 +221,12 @@ public class ComparableVsComparatorDemo {
         System.out.println("\nUsing Java 8 Comparator methods:");
 
         // Sort by name using Comparator.comparing
-        Collections.sort(employees, Comparator.comparing(Employee::getName));
+        Collections.sort(employees, Comparator.comparing(ComparableEmployee::getName));
         System.out.println("\nEmployees sorted by name (using Comparator.comparing):");
         printEmployees(employees);
 
         // Sort by salary in reverse order
-        Collections.sort(employees, Comparator.comparing(Employee::getSalary).reversed());
+        Collections.sort(employees, Comparator.comparing(ComparableEmployee::getSalary).reversed());
         System.out.println("\nEmployees sorted by salary (descending, using reversed()):");
         printEmployees(employees);
     }
@@ -238,24 +238,24 @@ public class ComparableVsComparatorDemo {
         System.out.println("\n5. Combining Comparators:\n");
 
         // Creating employees with some in the same department
-        List<Employee> employees = new ArrayList<>();
-        employees.add(new Employee("John", "Engineering", 75000));
-        employees.add(new Employee("Alice", "Marketing", 65000));
-        employees.add(new Employee("Bob", "Engineering", 85000));
-        employees.add(new Employee("Carol", "HR", 60000));
-        employees.add(new Employee("David", "Marketing", 70000));
-        employees.add(new Employee("Eve", "Engineering", 75000));  // Same salary as John
+        List<ComparableEmployee> employees = new ArrayList<>();
+        employees.add(new ComparableEmployee("John", "Engineering", 75000));
+        employees.add(new ComparableEmployee("Alice", "Marketing", 65000));
+        employees.add(new ComparableEmployee("Bob", "Engineering", 85000));
+        employees.add(new ComparableEmployee("Carol", "HR", 60000));
+        employees.add(new ComparableEmployee("David", "Marketing", 70000));
+        employees.add(new ComparableEmployee("Eve", "Engineering", 75000));  // Same salary as John
 
         System.out.println("Original list of employees:");
         printEmployees(employees);
 
         // Create individual comparators
-        Comparator<Employee> byDepartment = new EmployeeDepartmentComparator();
-        Comparator<Employee> bySalary = new EmployeeSalaryComparator();  // Descending
-        Comparator<Employee> byName = new EmployeeNameComparator();
+        Comparator<ComparableEmployee> byDepartment = new EmployeeDepartmentComparator();
+        Comparator<ComparableEmployee> bySalary = new EmployeeSalaryComparator();  // Descending
+        Comparator<ComparableEmployee> byName = new EmployeeNameComparator();
 
         // Combine comparators: first by department, then by salary (descending), then by name
-        Comparator<Employee> combinedComparator = byDepartment
+        Comparator<ComparableEmployee> combinedComparator = byDepartment
                 .thenComparing(bySalary)
                 .thenComparing(byName);
 
@@ -267,9 +267,9 @@ public class ComparableVsComparatorDemo {
 
         // Alternative using Java 8 syntax
         Collections.sort(employees, Comparator
-                .comparing(Employee::getDepartment)
-                .thenComparing(Employee::getSalary, Comparator.reverseOrder())
-                .thenComparing(Employee::getName));
+                .comparing(ComparableEmployee::getDepartment)
+                .thenComparing(ComparableEmployee::getSalary, Comparator.reverseOrder())
+                .thenComparing(ComparableEmployee::getName));
 
         System.out.println("\nSame sorting using Java 8 methods:");
         printEmployees(employees);
@@ -306,8 +306,8 @@ public class ComparableVsComparatorDemo {
     /**
      * Helper method to print a list of employees
      */
-    private static void printEmployees(List<Employee> employees) {
-        for (Employee emp : employees) {
+    private static void printEmployees(List<ComparableEmployee> employees) {
+        for (ComparableEmployee emp : employees) {
             System.out.println(emp.getName() + " - Department: " + emp.getDepartment() + 
                                ", Salary: $" + emp.getSalary());
         }
@@ -315,13 +315,13 @@ public class ComparableVsComparatorDemo {
 }
 
 /**
- * Person class implementing Comparable interface for natural ordering by age
+ * ComparablePerson class implementing Comparable interface for natural ordering by age
  */
-class Person implements Comparable<Person> {
+class ComparablePerson implements Comparable<ComparablePerson> {
     private String name;
     private int age;
 
-    public Person(String name, int age) {
+    public ComparablePerson(String name, int age) {
         this.name = name;
         this.age = age;
     }
@@ -341,7 +341,7 @@ class Person implements Comparable<Person> {
 
     // Defining natural ordering by age
     @Override
-    public int compareTo(Person other) {
+    public int compareTo(ComparablePerson other) {
         // Compare this person's age with other person's age
         return this.age - other.age;
 
@@ -454,14 +454,14 @@ class AgeComparator implements Comparator<Student> {
 }
 
 /**
- * Employee class for demonstrating multiple comparators
+ * ComparableEmployee class for demonstrating multiple comparators
  */
-class Employee {
+class ComparableEmployee {
     private String name;
     private String department;
     private double salary;
 
-    public Employee(String name, String department, double salary) {
+    public ComparableEmployee(String name, String department, double salary) {
         this.name = name;
         this.department = department;
         this.salary = salary;
@@ -483,9 +483,9 @@ class Employee {
 /**
  * Comparator to sort employees by name
  */
-class EmployeeNameComparator implements Comparator<Employee> {
+class EmployeeNameComparator implements Comparator<ComparableEmployee> {
     @Override
-    public int compare(Employee e1, Employee e2) {
+    public int compare(ComparableEmployee e1, ComparableEmployee e2) {
         return e1.getName().compareTo(e2.getName());
     }
 }
@@ -493,9 +493,9 @@ class EmployeeNameComparator implements Comparator<Employee> {
 /**
  * Comparator to sort employees by department
  */
-class EmployeeDepartmentComparator implements Comparator<Employee> {
+class EmployeeDepartmentComparator implements Comparator<ComparableEmployee> {
     @Override
-    public int compare(Employee e1, Employee e2) {
+    public int compare(ComparableEmployee e1, ComparableEmployee e2) {
         return e1.getDepartment().compareTo(e2.getDepartment());
     }
 }
@@ -503,9 +503,9 @@ class EmployeeDepartmentComparator implements Comparator<Employee> {
 /**
  * Comparator to sort employees by salary (descending - higher salary first)
  */
-class EmployeeSalaryComparator implements Comparator<Employee> {
+class EmployeeSalaryComparator implements Comparator<ComparableEmployee> {
     @Override
-    public int compare(Employee e1, Employee e2) {
+    public int compare(ComparableEmployee e1, ComparableEmployee e2) {
         // Note: We reverse the comparison for descending order
         return Double.compare(e2.getSalary(), e1.getSalary());
     }

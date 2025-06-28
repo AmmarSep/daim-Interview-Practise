@@ -1,10 +1,12 @@
 package Intermediate.rest;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.stream.Collectors;
 
 /**
  * This class demonstrates how to use RestTemplate for making HTTP requests
@@ -141,7 +143,7 @@ class RestTemplateClient {
         // Simulated implementation
         return userDatabase.values().stream()
                 .filter(user -> user.getName().contains(name) && user.getStatus().equals(status))
-                .toList();
+                .collect(Collectors.toList());
     }
 
     /**

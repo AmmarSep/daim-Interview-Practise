@@ -42,7 +42,7 @@ public class InheritanceDemo {
         // Demonstrating instance of keyword
         System.out.println("\n--- Using instanceof Keyword ---\n");
         System.out.println("Is car an instance of Vehicle1? " + (car instanceof Vehicle1));
-        System.out.println("Is motorcycle an instance of Car1? " + (motorcycle instanceof Car1));
+        System.out.println("Is motorcycle an instance of Motorcycle1? " + (motorcycle instanceof Motorcycle1));
         System.out.println("Is car an instance of Object? " + (car instanceof Object));
 
         // Demonstrating inheritance with constructors

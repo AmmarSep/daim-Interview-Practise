@@ -35,7 +35,7 @@ public class PolymorphismDemo {
     private static void demonstrateMethodOverloading() {
         System.out.println("\n1. Method Overloading (Compile-time Polymorphism):");
 
-        MathOperation math = new MathOperation();
+        PolyMathOperation math = new PolyMathOperation();
 
         // Same method name but different parameter types/counts
         System.out.println("Adding two integers: " + math.add(5, 10));  // Calls add(int, int)
@@ -55,15 +55,15 @@ public class PolymorphismDemo {
     private static void demonstrateMethodOverriding() {
         System.out.println("\n2. Method Overriding (Runtime Polymorphism):");
 
-        // Create an array of Vehicle references pointing to different vehicle objects
-        Vehicle[] vehicles = new Vehicle[3];
-        vehicles[0] = new Vehicle("Generic Vehicle", "Unknown");
-        vehicles[1] = new Car("Toyota Camry", "Sedan", 4);
-        vehicles[2] = new Motorcycle("Harley Davidson", "Cruiser", false);
+        // Create an array of PolyVehicle references pointing to different vehicle objects
+        PolyVehicle[] vehicles = new PolyVehicle[3];
+        vehicles[0] = new PolyVehicle("Generic Vehicle", "Unknown");
+        vehicles[1] = new PolyCar("Toyota Camry", "Sedan", 4);
+        vehicles[2] = new PolyMotorcycle("Harley Davidson", "Cruiser", false);
 
         // Polymorphic method calls - the JVM decides which method to call at runtime
         // based on the actual object type, not the reference type
-        for (Vehicle vehicle : vehicles) {
+        for (PolyVehicle vehicle : vehicles) {
             System.out.println("\nVehicle details: " + vehicle.getName() + " - " + vehicle.getType());
 
             // This method is overridden in subclasses
@@ -103,37 +103,37 @@ public class PolymorphismDemo {
         System.out.println("\n4. Polymorphic Variables and Parameters:");
 
         // Parent class reference can hold a child class object
-        Vehicle genericVehicle = new Vehicle("Generic", "Unknown");
-        Vehicle carAsVehicle = new Car("Ford Mustang", "Sports Car", 2);  // Polymorphic assignment
+        PolyVehicle genericVehicle = new PolyVehicle("Generic", "Unknown");
+        PolyVehicle carAsVehicle = new PolyCar("Ford Mustang", "Sports Car", 2);  // Polymorphic assignment
 
         System.out.println("\nCalling methods directly:");
-        genericVehicle.start();  // Calls Vehicle's start()
-        carAsVehicle.start();    // Calls Car's start() - polymorphic behavior
+        genericVehicle.start();  // Calls PolyVehicle's start()
+        carAsVehicle.start();    // Calls PolyCar's start() - polymorphic behavior
 
         // This demonstrates upcasting (implicit)
         // Upcasting is always safe as a subclass is always a specialized version of its superclass
 
         // Polymorphic method parameters
         System.out.println("\nPolymorphic method parameters:");
-        startVehicle(genericVehicle);  // Pass Vehicle object
-        startVehicle(carAsVehicle);    // Pass Car object as Vehicle
-        startVehicle(new Motorcycle("Ducati", "Sport", true));  // Pass Motorcycle object as Vehicle
+        startVehicle(genericVehicle);  // Pass PolyVehicle object
+        startVehicle(carAsVehicle);    // Pass PolyCar object as PolyVehicle
+        startVehicle(new PolyMotorcycle("Ducati", "Sport", true));  // Pass PolyMotorcycle object as PolyVehicle
     }
 
     /**
-     * Helper method that accepts any Vehicle type (or its subclasses)
+     * Helper method that accepts any PolyVehicle type (or its subclasses)
      */
-    private static void startVehicle(Vehicle vehicle) {
+    private static void startVehicle(PolyVehicle vehicle) {
         System.out.println("Starting: " + vehicle.getName());
         vehicle.start();  // Polymorphic call
 
         // We can check the actual type at runtime
-        if (vehicle instanceof Car) {
-            System.out.println("This is a car with " + ((Car) vehicle).getDoorCount() + " doors");
+        if (vehicle instanceof PolyCar) {
+            System.out.println("This is a car with " + ((PolyCar) vehicle).getDoorCount() + " doors");
             // This requires downcasting (explicit casting from parent to child)
             // Downcasting can be dangerous and should be checked with instanceof
-        } else if (vehicle instanceof Motorcycle) {
-            Motorcycle bike = (Motorcycle) vehicle;  // Downcasting
+        } else if (vehicle instanceof PolyMotorcycle) {
+            PolyMotorcycle bike = (PolyMotorcycle) vehicle;  // Downcasting
             System.out.println("This is a motorcycle" + 
                 (bike.hasWindshield() ? " with a windshield" : " without a windshield"));
         }
@@ -146,16 +146,16 @@ public class PolymorphismDemo {
         System.out.println("\n5. instanceof Operator and Type Casting:");
 
         // Create objects
-        Vehicle vehicle = new Vehicle("Generic", "Basic");
-        Vehicle car = new Car("Honda Civic", "Sedan", 4);
-        Car actualCar = new Car("BMW", "Coupe", 2);
+        PolyVehicle vehicle = new PolyVehicle("Generic", "Basic");
+        PolyVehicle car = new PolyCar("Honda Civic", "Sedan", 4);
+        PolyCar actualCar = new PolyCar("BMW", "Coupe", 2);
 
         // Check types with instanceof
-        System.out.println("vehicle instanceof Vehicle: " + (vehicle instanceof Vehicle));  // true
-        System.out.println("vehicle instanceof Car: " + (vehicle instanceof Car));  // false
-        System.out.println("car instanceof Vehicle: " + (car instanceof Vehicle));  // true
-        System.out.println("car instanceof Car: " + (car instanceof Car));  // true
-        System.out.println("actualCar instanceof Vehicle: " + (actualCar instanceof Vehicle));  // true
+        System.out.println("vehicle instanceof PolyVehicle: " + (vehicle instanceof PolyVehicle));  // true
+        System.out.println("vehicle instanceof PolyCar: " + (vehicle instanceof PolyCar));  // false
+        System.out.println("car instanceof PolyVehicle: " + (car instanceof PolyVehicle));  // true
+        System.out.println("car instanceof PolyCar: " + (car instanceof PolyCar));  // true
+        System.out.println("actualCar instanceof PolyVehicle: " + (actualCar instanceof PolyVehicle));  // true
 
         // Safe downcasting with instanceof check
         System.out.println("\nSafe downcasting example:");
@@ -167,12 +167,12 @@ public class PolymorphismDemo {
     /**
      * Helper method that safely downcasts when appropriate
      */
-    private static void processVehicle(Vehicle v) {
+    private static void processVehicle(PolyVehicle v) {
         System.out.println("Processing vehicle: " + v.getName());
 
-        if (v instanceof Car) {
+        if (v instanceof PolyCar) {
             // Safe downcasting after instanceof check
-            Car c = (Car) v;
+            PolyCar c = (PolyCar) v;
             c.honk();  // Car-specific method
             System.out.println("This car has " + c.getDoorCount() + " doors");
         } else {
@@ -182,7 +182,7 @@ public class PolymorphismDemo {
 }
 
 // Classes for demonstrating Method Overloading
-class MathOperation {
+class PolyMathOperation {
     // Overloaded methods - same name, different parameters
     public int add(int a, int b) {
         return a + b;
@@ -202,11 +202,11 @@ class MathOperation {
 }
 
 // Classes for demonstrating Method Overriding
-class Vehicle {
+class PolyVehicle {
     private String name;
     private String type;
 
-    public Vehicle(String name, String type) {
+    public PolyVehicle(String name, String type) {
         this.name = name;
         this.type = type;
     }
@@ -233,10 +233,10 @@ class Vehicle {
     }
 }
 
-class Car extends Vehicle {
+class PolyCar extends PolyVehicle {
     private int doorCount;
 
-    public Car(String name, String type, int doorCount) {
+    public PolyCar(String name, String type, int doorCount) {
         super(name, type);  // Call parent constructor
         this.doorCount = doorCount;
     }
@@ -257,10 +257,10 @@ class Car extends Vehicle {
     }
 }
 
-class Motorcycle extends Vehicle {
+class PolyMotorcycle extends PolyVehicle {
     private boolean hasWindshield;
 
-    public Motorcycle(String name, String type, boolean hasWindshield) {
+    public PolyMotorcycle(String name, String type, boolean hasWindshield) {
         super(name, type);  // Call parent constructor
         this.hasWindshield = hasWindshield;
     }

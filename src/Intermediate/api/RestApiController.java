@@ -6,6 +6,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 /**
  * A demonstration of a RESTful API controller with CRUD operations
@@ -427,7 +428,7 @@ class ProductServiceImpl implements ProductService {
     public List<Product> findByCategory(String category) {
         return productMap.values().stream()
                 .filter(product -> category.equalsIgnoreCase(product.getCategory()))
-                .toList();
+                .collect(Collectors.toList());
     }
 
     @Override
@@ -439,7 +440,7 @@ class ProductServiceImpl implements ProductService {
                     (product.getDescription() != null && 
                      product.getDescription().toLowerCase().contains(lowerQuery))
                 )
-                .toList();
+                .collect(Collectors.toList());
     }
 }
 

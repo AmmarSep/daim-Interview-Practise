@@ -102,7 +102,7 @@ public class LambdaAndStreamDemo {
 
         // Function composition
         Function<Integer, Integer> doubled = n -> n * 2;
-        Function<Integer, Integer> lengthThenDouble = doubled.compose(stringLength);
+        Function<String, Integer> lengthThenDouble = doubled.compose(stringLength);
         System.out.println("Double the length of 'World': " + lengthThenDouble.apply("World"));
 
         // Consumer - takes one argument, returns nothing
@@ -170,35 +170,29 @@ public class LambdaAndStreamDemo {
 
         // From a collection
         List<String> animals = Arrays.asList("Dog", "Cat", "Elephant", "Fox", "Rabbit");
-        Stream<String> animalStream = animals.stream();
-        System.out.println("Stream from list: " + 
-                         animalStream.collect(Collectors.toList()));
+        List<String> animalList = animals.stream().collect(Collectors.toList());
+        System.out.println("Stream from list: " + animalList);
 
         // From individual elements
-        Stream<Integer> streamOfElements = Stream.of(1, 2, 3, 4, 5);
-        System.out.println("Stream of elements: " + 
-                         streamOfElements.collect(Collectors.toList()));
+        List<Integer> elementsList = Stream.of(1, 2, 3, 4, 5).collect(Collectors.toList());
+        System.out.println("Stream of elements: " + elementsList);
 
         // From an array
         String[] colorsArray = {"Red", "Green", "Blue"};
-        Stream<String> streamFromArray = Arrays.stream(colorsArray);
-        System.out.println("Stream from array: " + 
-                         streamFromArray.collect(Collectors.toList()));
+        List<String> colorsList = Arrays.stream(colorsArray).collect(Collectors.toList());
+        System.out.println("Stream from array: " + colorsList);
 
         // Generate infinite stream (limited to 5 elements)
-        Stream<Double> randomStream = Stream.generate(Math::random).limit(5);
-        System.out.println("Stream generated with Math.random(): " + 
-                         randomStream.collect(Collectors.toList()));
+        List<Double> randomList = Stream.generate(Math::random).limit(5).collect(Collectors.toList());
+        System.out.println("Stream generated with Math.random(): " + randomList);
 
         // Iterate to create stream
-        Stream<Integer> iteratedStream = Stream.iterate(0, n -> n + 2).limit(5);
-        System.out.println("Stream of even numbers using iterate: " + 
-                         iteratedStream.collect(Collectors.toList()));
+        List<Integer> iteratedList = Stream.iterate(0, n -> n + 2).limit(5).collect(Collectors.toList());
+        System.out.println("Stream of even numbers using iterate: " + iteratedList);
 
         // IntStream, LongStream, DoubleStream
-        IntStream intStream = IntStream.range(1, 6); // 1 to 5
-        System.out.println("IntStream range: " + 
-                         intStream.boxed().collect(Collectors.toList()));
+        List<Integer> intList = IntStream.range(1, 6).boxed().collect(Collectors.toList()); // 1 to 5
+        System.out.println("IntStream range: " + intList);
 
         System.out.println();
     }

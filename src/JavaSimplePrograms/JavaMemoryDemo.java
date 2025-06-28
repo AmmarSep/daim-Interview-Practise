@@ -275,11 +275,11 @@ public class JavaMemoryDemo {
 
         // Example of creating a potential memory leak (don't do this in production!)
         class MemoryLeakExample {
-            private static final List<Object> leakyList = new ArrayList<>();
+            private final List<Object> leakyList = new ArrayList<>();
 
             public void addToList(Object obj) {
                 leakyList.add(obj);
-                System.out.println("Added object to static list. Current size: " + leakyList.size());
+                System.out.println("Added object to list. Current size: " + leakyList.size());
             }
         }
 
@@ -424,9 +424,13 @@ public class JavaMemoryDemo {
      */
     static class ObjectWithFinalize {
         @Override
-        protected void finalize() throws Throwable {
+        protected void finalize() {
             System.out.println("Finalize method called - object being garbage collected");
-            super.finalize();
+            try {
+                super.finalize();
+            } catch (Throwable e) {
+                e.printStackTrace();
+            }
         }
     }
 }

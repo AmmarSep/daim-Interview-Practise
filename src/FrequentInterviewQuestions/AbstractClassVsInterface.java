@@ -43,16 +43,16 @@ public class AbstractClassVsInterface {
         System.out.println("Creating objects from implementations:");
 
         // Abstract class implementation
-        Animal dog = new Dog("Buddy", 3);
+        DemoAnimal dog = new DemoDog("Buddy", 3);
         dog.eat();          // Concrete method from abstract class
         dog.makeSound();    // Abstract method implemented by subclass
         System.out.println("Dog age: " + dog.getAge());  // Using instance variable
 
         // Interface implementation
-        Flyable bird = new Bird("Sparrow");
+        DemoFlyable bird = new DemoBird("Sparrow");
         bird.fly();         // Abstract method from interface
         bird.land();        // Default method from interface (Java 8+)
-        System.out.println("Maximum flying speed: " + Flyable.MAX_SPEED);  // Constant from interface
+        System.out.println("Maximum flying speed: " + DemoFlyable.MAX_SPEED);  // Constant from interface
 
         System.out.println("\nKey Differences:");
         System.out.println("1. Abstract Class:");
@@ -75,23 +75,23 @@ public class AbstractClassVsInterface {
         System.out.println("\n2. Multiple Inheritance:\n");
 
         // Class implementing multiple interfaces
-        Duck duck = new Duck("Donald", 2);
-        duck.eat();         // From Animal abstract class
-        duck.makeSound();    // From Animal abstract class
-        duck.fly();         // From Flyable interface
-        duck.swim();        // From Swimmable interface
+        DemoDuck duck = new DemoDuck("Donald", 2);
+        duck.eat();         // From DemoAnimal abstract class
+        duck.makeSound();    // From DemoAnimal abstract class
+        duck.fly();         // From DemoFlyable interface
+        duck.swim();        // From DemoSwimmable interface
 
         System.out.println("\nA class can extend only one abstract class but implement multiple interfaces:");
-        System.out.println("Duck extends Animal and implements both Flyable and Swimmable");
+        System.out.println("DemoDuck extends DemoAnimal and implements both DemoFlyable and DemoSwimmable");
 
         // Using different interfaces with the same object
         System.out.println("\nUsing different interface references for the same object:");
 
-        Flyable flyingDuck = duck;
-        flyingDuck.fly();   // Accessing as a Flyable
+        DemoFlyable flyingDuck = duck;
+        flyingDuck.fly();   // Accessing as a DemoFlyable
 
-        Swimmable swimmingDuck = duck;
-        swimmingDuck.swim(); // Accessing as a Swimmable
+        DemoSwimmable swimmingDuck = duck;
+        swimmingDuck.swim(); // Accessing as a DemoSwimmable
 
         // Cannot extend multiple abstract classes
         System.out.println("\nJava does not support extending multiple abstract classes");
@@ -105,17 +105,17 @@ public class AbstractClassVsInterface {
         System.out.println("\n3. Evolution with Java 8+:\n");
 
         // Default methods in interfaces
-        Flyable bird = new Bird("Eagle");
+        DemoFlyable bird = new DemoBird("Eagle");
         bird.fly();         // Abstract method
         bird.land();        // Default method
 
         // Default methods can be overridden
-        Flyable airplane = new Airplane();
+        DemoFlyable airplane = new DemoAirplane();
         airplane.fly();
         airplane.land();    // Overridden default method
 
         // Static methods in interfaces
-        String flyingTip = Flyable.getFlyingTip();
+        String flyingTip = DemoFlyable.getFlyingTip();
         System.out.println("Flying tip: " + flyingTip);  // Static method in interface
 
         // Private methods in interfaces (Java 9+)
@@ -141,7 +141,7 @@ public class AbstractClassVsInterface {
         System.out.println("- You want to provide a common base implementation");
         System.out.println("- You're working with an 'is-a' relationship");
         System.out.println("- Your abstract class would be the base for tightly coupled class hierarchy");
-        System.out.println("Example: Animal as base for Dog, Cat, etc.");
+        System.out.println("Example: DemoAnimal as base for DemoDog, DemoCat, etc.");
 
         System.out.println("\nUse Interface when:");
         System.out.println("- You want to define a contract that unrelated classes can implement");
@@ -149,18 +149,18 @@ public class AbstractClassVsInterface {
         System.out.println("- You're specifying behavior but not concerned with who implements it");
         System.out.println("- You're working with a 'can-do' relationship");
         System.out.println("- You want to decouple the definition from the implementation");
-        System.out.println("Example: Flyable can be implemented by Bird, Airplane, etc.");
+        System.out.println("Example: DemoFlyable can be implemented by DemoBird, DemoAirplane, etc.");
 
         System.out.println("\nDemo Examples:");
-        System.out.println("- AbstractVehicle class: Base for closely related Car, Motorcycle classes");
-        Car car = new SportsCar();
+        System.out.println("- DemoAbstractVehicle class: Base for closely related DemoCar, DemoMotorcycle classes");
+        DemoCar car = new DemoSportsCar();
         car.startEngine();  // Common implementation from abstract class
         car.accelerate();   // Specialized implementation
         car.applyBrakes();  // Specialized implementation
 
-        System.out.println("\n- Drivable interface: Implemented by unrelated Vehicle, Simulator classes");
-        Drivable carDriver = new Car();  // Vehicle implementation
-        Drivable simulator = new DrivingSimulator();  // Non-vehicle implementation
+        System.out.println("\n- DemoDrivable interface: Implemented by unrelated DemoVehicle, DemoSimulator classes");
+        DemoDrivable carDriver = new DemoCar();  // Vehicle implementation
+        DemoDrivable simulator = new DemoDrivingSimulator();  // Non-vehicle implementation
         carDriver.drive();  // Same contract, different implementation
         simulator.drive();  // Same contract, different implementation
     }
@@ -190,8 +190,8 @@ public class AbstractClassVsInterface {
         // Demo with two different logger implementations
         System.out.println("\nExample with Logger implementations:");
 
-        Logger consoleLogger = new ConsoleLogger();
-        Logger fileLogger = new FileLogger("app.log");
+        DemoLogger consoleLogger = new DemoConsoleLogger();
+        DemoLogger fileLogger = new DemoFileLogger("app.log");
 
         // Both implement the same interface but work differently
         consoleLogger.log("This is a console message");
@@ -200,245 +200,5 @@ public class AbstractClassVsInterface {
         // Both inherit common functionality from AbstractLogger
         consoleLogger.logError("Console error");  // Uses template method from abstract class
         fileLogger.logError("File error");        // Uses template method from abstract class
-    }
-}
-
-// Abstract Class Example
-abstract class Animal {
-    // Instance variables - allowed in abstract classes
-    private String name;
-    private int age;
-
-    // Constructor - allowed in abstract classes
-    public Animal(String name, int age) {
-        this.name = name;
-        this.age = age;
-    }
-
-    // Getters for instance variables
-    public String getName() {
-        return name;
-    }
-
-    public int getAge() {
-        return age;
-    }
-
-    // Concrete method with implementation
-    public void eat() {
-        System.out.println(name + " is eating");
-    }
-
-    // Abstract method without implementation
-    public abstract void makeSound();
-}
-
-// Interface Example
-interface Flyable {
-    // Constant (implicitly public static final)
-    int MAX_SPEED = 100;  // mph
-
-    // Abstract method (implicitly public abstract)
-    void fly();
-
-    // Default method with implementation (Java 8+)
-    default void land() {
-        System.out.println("Landing normally");
-    }
-
-    // Static method (Java 8+)
-    static String getFlyingTip() {
-        return "Maintain proper altitude for safety";
-    }
-
-    // Private method (Java 9+) - uncomment if using Java 9 or higher
-    // private void helperMethod() {
-    //     System.out.println("Helper method for internal use only");
-    // }
-}
-
-// Another interface for multiple inheritance demo
-interface Swimmable {
-    void swim();
-}
-
-// Concrete implementation of abstract class
-class Dog extends Animal {
-    public Dog(String name, int age) {
-        super(name, age);  // Calling abstract class constructor
-    }
-
-    @Override
-    public void makeSound() {
-        System.out.println(getName() + " says: Woof!");
-    }
-}
-
-// Concrete implementation of interface
-class Bird implements Flyable {
-    private String species;
-
-    public Bird(String species) {
-        this.species = species;
-    }
-
-    @Override
-    public void fly() {
-        System.out.println(species + " is flying");
-    }
-}
-
-// Concrete implementation overriding default method
-class Airplane implements Flyable {
-    @Override
-    public void fly() {
-        System.out.println("Airplane is flying with engines");
-    }
-
-    @Override
-    public void land() {
-        System.out.println("Airplane is landing on runway");  // Overriding default method
-    }
-}
-
-// Class implementing multiple interfaces and extending abstract class
-class Duck extends Animal implements Flyable, Swimmable {
-    public Duck(String name, int age) {
-        super(name, age);
-    }
-
-    @Override
-    public void makeSound() {
-        System.out.println(getName() + " says: Quack!");
-    }
-
-    @Override
-    public void fly() {
-        System.out.println(getName() + " is flying");
-    }
-
-    @Override
-    public void swim() {
-        System.out.println(getName() + " is swimming");
-    }
-}
-
-// Abstract class for vehicles
-abstract class AbstractVehicle {
-    // Common properties
-    protected String brand;
-    protected int year;
-
-    public AbstractVehicle(String brand, int year) {
-        this.brand = brand;
-        this.year = year;
-    }
-
-    // Common implementation for all vehicles
-    public void startEngine() {
-        System.out.println("Starting engine of " + brand);
-    }
-
-    // Abstract methods that must be implemented by subclasses
-    public abstract void accelerate();
-    public abstract void applyBrakes();
-}
-
-// Interface for things that can be driven
-interface Drivable {
-    void drive();
-    void stop();
-}
-
-// Class extending abstract class
-class Car extends AbstractVehicle implements Drivable {
-    public Car() {
-        super("Generic Car", 2020);
-    }
-
-    @Override
-    public void accelerate() {
-        System.out.println("Car is accelerating");
-    }
-
-    @Override
-    public void applyBrakes() {
-        System.out.println("Car is stopping");
-    }
-
-    @Override
-    public void drive() {
-        System.out.println("Driving a real car");
-    }
-
-    @Override
-    public void stop() {
-        applyBrakes();  // Reuse existing method
-    }
-}
-
-// Specialized car
-class SportsCar extends Car {
-    @Override
-    public void accelerate() {
-        System.out.println("Sports car is accelerating quickly");
-    }
-}
-
-// Unrelated class implementing same interface
-class DrivingSimulator implements Drivable {
-    @Override
-    public void drive() {
-        System.out.println("Simulating driving experience");
-    }
-
-    @Override
-    public void stop() {
-        System.out.println("Simulation stopped");
-    }
-}
-
-// Logging example
-
-// Interface defines contract
-interface Logger {
-    void log(String message);
-    void logError(String message);
-}
-
-// Abstract class provides common functionality
-abstract class AbstractLogger implements Logger {
-    // Template method pattern
-    @Override
-    public void logError(String message) {
-        String errorMsg = "ERROR: " + message;
-        log(errorMsg);  // Calls the specialized implementation
-    }
-
-    // This must be implemented by subclasses
-    @Override
-    public abstract void log(String message);
-}
-
-// Concrete implementation for console logging
-class ConsoleLogger extends AbstractLogger {
-    @Override
-    public void log(String message) {
-        System.out.println("Console: " + message);
-    }
-}
-
-// Concrete implementation for file logging
-class FileLogger extends AbstractLogger {
-    private String filename;
-
-    public FileLogger(String filename) {
-        this.filename = filename;
-    }
-
-    @Override
-    public void log(String message) {
-        System.out.println("File (" + filename + "): " + message);
-        // In a real implementation, this would write to a file
     }
 }

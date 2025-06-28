@@ -329,8 +329,8 @@ public class FunctionalInterfaceDemo {
 
         // Composing UnaryOperators using andThen()
         System.out.println("\nComposing UnaryOperators:");
-        UnaryOperator<Integer> squareThenDouble = square.andThen(doubleIt);
-        UnaryOperator<Integer> doubleThenSquare = square.compose(doubleIt);
+        Function<Integer, Integer> squareThenDouble = square.andThen(doubleIt);
+        Function<Integer, Integer> doubleThenSquare = square.compose(doubleIt);
 
         System.out.println("Square then double 5: " + squareThenDouble.apply(5)); // (5^2) * 2 = 50
         System.out.println("Double then square 5: " + doubleThenSquare.apply(5)); // (5*2)^2 = 100
